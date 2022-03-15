@@ -1,0 +1,83 @@
+@extends('layouts.admin')
+
+@section('container')
+<div class="wrapper-register">
+    <form enctype="multipart/form-data" action="/admin/addItem" method="POST">
+        @csrf
+        <div class="mb-3 sub-heading">
+            <h1>Add Furniture</h1>
+        </div>
+
+        @if (session()->has('addMessage'))
+        <div class="m-auto text-center alert alert-success alert-dismissible fade show mb-3" role="alert">
+            {{ session('addMessage') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control  @error('name') is-invalid @enderror" id="name" name="name"
+                value="{{ old('name') }}">
+            @error('name')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
+                value="{{ old('price') }}">
+            @error('price')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <select name="type" id="type" class="form-select @error('type') is-invalid @enderror">
+                <option value="Bed">Bed</option>
+                <option value="Wardrobe">Wardrobe</option>
+                <option value="Sofa">Sofa</option>
+                <option value="Chair">Chair</option>
+                <option value="Table">Table</option>
+            </select>
+            @error('type')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="color" class="form-label">Color</label>
+            <select name="color" id="color" class="form-select @error('color') is-invalid @enderror">
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+                <option value="Navy">Blue Navy</option>
+            </select>
+            @error('color')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label pe-3 @error('image') is-invalid @enderror">Image</label>
+            <input type="file" id="image" class="form-control" name="image">
+            @error('image')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Add Furniture</button>
+    </form>
+</div>
+@endsection

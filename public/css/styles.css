@@ -1,0 +1,108 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.logo {
+    height: 50px;
+}
+
+#hero {
+    width: 100%;
+    height: 65vh;
+    background: url("../img/heroImage.jpeg") center center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    display: flex;
+}
+
+#hero .main-title {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#products {
+    margin-top: 2em;
+}
+
+.product {
+    cursor: pointer;
+}
+
+.product img {
+    background: #f6f6f4;
+    padding: 3em;
+}
+
+.product .product-desc {
+    margin-top: 1em;
+}
+
+.product .product-desc h2 {
+    font-size: 1.5rem;
+}
+
+.product .product-desc h4 {
+    color: gray;
+    font-size: 1.1rem;
+}
+
+/* Login */
+.wrapper-content {
+    display: flex;
+    padding-top: 2em;
+}
+
+.wrapper-menu {
+    width: 50%;
+}
+
+.component {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgot > a {
+    color: black;
+}
+
+.content-login {
+    width: 50%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.sub-heading > h1 {
+    text-align: center;
+}
+
+.btn-primary {
+    width: 40%;
+}
+
+.line {
+    border-left: 2px solid #d6d6d7;
+}
+
+.register {
+    position: relative;
+    margin: auto;
+}
+
+/* Register & Update Profile */
+.wrapper-register,
+.wrapper-update-profile {
+    width: 30%;
+    margin: auto;
+    padding-top: 2em;
+    position: relative;
+}
+
+.full-name {
+    display: flex;
+}
+
+.space {
+    width: 5%;
+}
